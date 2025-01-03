@@ -1,0 +1,235 @@
+/* pbo.css */
+
+/* Global Styles */
+body {
+    background-color: #f8fafc; /* Light background */
+    font-family: 'Arial', sans-serif; /* Font yang lebih baik */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Styles */
+nav {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.nav-link {
+    color: #ffffff; /* White text */
+    padding: 10px 15px; /* Padding for better click area */
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    color: #0c99d6; /* Light blue on hover */
+}
+
+/* Hero Section Styles */
+.hero-section {
+    background-image: url('x2.jpg'); /* Ganti dengan gambar latar belakang yang sesuai */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Set a fixed height for the hero section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255); /* Text color for hero section */
+}
+
+.hero-button {
+    background-color: #3b82f6; /* Blue button */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Service Card Styles */
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Doctor Card Styles */
+.doctor-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+
+.doctor-image {
+    width: 100px; /* Set a fixed width for images */
+    height: 100px; /* Set a fixed height for images */
+    border-radius: 50%; /* Circular images */
+    margin-bottom: 10px;
+    object-fit: cover; /* Ensure the image scales properly within the circle */
+}
+
+/* Form Styles */
+.registration-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: #3b82f6; /* Blue border on focus */
+    outline: none;
+}
+
+/* Submit Button Styles */
+.submit-button {
+    background-color: #3b82f6; /* Blue button */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.submit-button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e3a8a; /* Dark blue background */
+    color: white;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .doctor-image {
+        width: 80px; /* Smaller images on mobile */
+        height: 80px;
+    }
+}
+
+/* Styling umum untuk tombol */
+button {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+/* Gaya untuk tombol Unduh Riwayat */
+#download-button {
+    background-color: #3b82f6; /* Blue button */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+#download-button:hover {
+    background-color: #0749c3; /* Warna hijau yang lebih gelap */
+    transform: scale(1.05);
+}
+
+/* Gaya untuk tombol Kembali ke Menu Awal */
+button.bg-gray-600 {
+    background-color: #3b82f6; /* Blue button */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.bg-gray-600:hover {
+    background-color: #0749c3; /* Warna abu-abu yang lebih gelap */
+    transform: scale(1.05);
+}
+
+/* Styling untuk pesan sukses */
+.text-green-600 {
+    color: #2f855a;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+/* Styling untuk form setelah disembunyikan */
+#registration-form {
+    display: block; /* Form tampil secara default */
+}

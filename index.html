@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinik Hewan Sejahtera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold">Klinik Hewan Sejahtera</span>
+                </div>
+                <div class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#beranda" class="nav-link">Beranda</a></li>
+                        <li><a href="#dokter" class="nav-link">Dokter</a></li>
+                        <li><a href="#layanan" class="nav-link">Layanan</a></li>    
+                        <li><a href="#kontak" class="nav-link">Kontak</a></li>
+                    </ul>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-section text-white py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">Perawatan Terbaik untuk Sahabat Setia Anda</h1>
+            <p class="text-xl mb-8">Layanan kesehatan hewan profesional dengan dokter berpengalaman</p>
+        </div>
+    </section>
+
+    <!-- Dokter Section -->
+    <section id="dokter" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Tim Dokter Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="doctor-card text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="aipo.jpeg" alt="Dokter 1" class="doctor-image mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">Dr. Sarah Wilson</h3>
+                    <p class="text-gray-600">Spesialis Hewan Kecil</p>
+                </div>
+                <div class="doctor-card text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="aipo.jpeg" alt="Dokter 2" class="doctor-image mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">Dr. John Davis</h3>
+                    <p class="text-gray-600">Ahli Bedah Hewan</p>
+                </div>
+                <div class="doctor-card text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="aipo.jpeg" alt="Dokter 3" class="doctor-image mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">Dr. Maria Garcia</h3>
+                    <p class="text-gray-600">Spesialis Nutrisi Hewan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Pendaftaran -->
+    <section id= "layanan" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Daftar Konsultasi</h2>
+            <div class="max-w-2xl mx-auto">
+                <form id="registration-form" class="registration-form bg-white p-6 rounded-lg shadow-md">
+                    <div class="mb-6">
+                        <label for="owner-name" class="form-label">Nama Pemilik</label>
+                        <input type="text" id="owner-name" name="owner-name" class="form-input" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="pet-name" class="form-label">Nama Hewan</label>
+                        <input type="text" id="pet-name" name="pet-name" class="form-input" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="pet-type" class="form-label">Jenis Hewan</label>
+                        <select id="pet-type" name="pet-type" class="form-select" required>
+                            <option value="">Pilih Jenis Hewan</option>
+                            <option value="cat">Kucing</option>
+                            <option value="dog">Anjing</option>
+                            <option value="rabbit">Kelinci</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label for="service" class="form-label">Layanan</label>
+                        <select id="service" name="service" class="form-select" required>
+                            <option value="">Pilih Layanan</option>
+                            <option value="checkup">Pemeriksaan Rutin</option>
+                            <option value="vaccination">Vaksinasi</option>
+                            <option value="grooming">Grooming</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label for="date" class="form-label">Tanggal Kunjungan</label>
+                        <input type="date" id="date" name="date" class="form-input" required>
+                    </div>
+                    <button type="submit" class="submit-button">Kirim</button>
+                   
+                </form>
+            </div>
+        </div>
+    </section>
+   <!-- Update pada script bagian penanganan tombol kirim -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("registration-form");
+        const submitButton = form.querySelector('button[type="submit"]');
+        const successMessage = document.createElement("div");
+        successMessage.classList.add("text-green-600", "font-bold", "text-center", "mt-4");
+        
+        // Fungsi untuk mengunduh data
+        function downloadFile(data, filename) {
+            const blob = new Blob([data], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+        }
+
+        // Fungsi untuk menangani tombol kirim
+        submitButton.addEventListener("click", (event) => {
+            event.preventDefault(); // Mencegah form submit secara default
+
+            const ownerName = document.getElementById("owner-name").value;
+            const petName = document.getElementById("pet-name").value;
+            const petType = document.getElementById("pet-type").value;
+            const service = document.getElementById("service").value;
+            const date = document.getElementById("date").value;
+
+            // Validasi input
+            if (!ownerName || !petName || !petType || !service || !date) {
+                alert("Harap isi semua data sebelum mengirim!");
+                return;
+            }
+
+            // Menyembunyikan form dan menampilkan pesan sukses
+            form.style.display = "none";
+            successMessage.textContent = "Form berhasil dikirim! Silakan unduh riwayat konsultasi Anda.";
+            form.parentNode.appendChild(successMessage);
+
+            // Menampilkan tombol download dan kembali
+            const buttonsContainer = document.createElement("div");
+            buttonsContainer.classList.add("flex", "justify-center", "space-x-4", "mt-4");
+
+            const downloadLink = document.createElement("button");
+            downloadLink.id = "download-button";
+            downloadLink.classList.add("bg-blue-600", "text-white", "px-4", "py-2", "rounded-lg", "hover:bg-blue-700");
+            downloadLink.textContent = "Unduh Riwayat";
+            buttonsContainer.appendChild(downloadLink);
+
+            const backToFormButton = document.createElement("button");
+            backToFormButton.classList.add("bg-gray-600", "text-white", "px-4", "py-2", "rounded-lg", "hover:bg-gray-700");
+            backToFormButton.textContent = "Kembali ke Menu Awal";
+            buttonsContainer.appendChild(backToFormButton);
+
+            successMessage.appendChild(buttonsContainer);
+
+            // Menangani klik tombol download
+            downloadLink.addEventListener("click", () => {
+                const fileContent = `
+                    Riwayat Daftar Konsultasi
+                    ========================
+                    Nama Pemilik: ${ownerName}
+                    Nama Hewan  : ${petName}
+                    Jenis Hewan : ${petType}
+                    Layanan     : ${service}
+                    Tanggal     : ${date}
+                `;
+
+                downloadFile(fileContent, "riwayat_konsultasi.txt");
+                alert("Riwayat telah berhasil diunduh.");
+            });
+
+            // Menangani klik tombol kembali ke menu awal
+            backToFormButton.addEventListener("click", () => {
+                form.style.display = "block"; // Menampilkan kembali form
+                successMessage.remove(); // Menghapus pesan sukses dan tombol
+            });
+        });
+    });
+</script>
+
+    
+    
+
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Kontak Kami</h2>
+           
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-blue-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="footer-section">
+                    <h3 class="footer-heading">Klinik Hewan Sejahtera</h3>
+                    <p class="footer-text">Memberikan pelayanan terbaik untuk hewan kesayangan Anda.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-heading"> Jam Operasional</h3>
+                    <p class="footer-text">Senin - Sabtu: 08.00 - 20.00</p>
+                    <p class="footer-text">Minggu: 09.00 - 16.00</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-heading">Kontak</h3>
+                    <p class="footer-text">Jl. Hewan Sehat No. 123</p>
+                    <p class="footer-text">Telp: (021) 123-4567</p>
+                    <p class="footer-text">Email: info@klinikhewan.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="footer-text">&copy; 2024 Klinik Hewan Sejahtera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js" defer></script>
+</body>
+</html>
